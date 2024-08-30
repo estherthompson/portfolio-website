@@ -1,0 +1,145 @@
+.home-page {
+  overflow: scroll; /* Added to enable scrolling if content overflows */
+
+  .text-zone {
+    font-family: 'BarlowSemiCondensed-Regular';
+    text-align: center;
+    font-size: 35px;
+    color: #ad4b6a;
+    margin-top: 10px;
+    margin-left: -400px; 
+
+    h2 {
+      font-size: 25px;
+      font-family: 'BarlowSemiCondensed-Thin';
+      color: #343030;
+      margin-top: -40px;
+      z-index: 4;
+    }
+
+    p {
+      font-size: 12px;
+      font-family: 'BarlowSemiCondensed-Light';
+    }
+  }
+
+  :root {
+    --spark-color: white;
+    --spark-duration: 2s;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+    width: 25vw;
+    height: 25vw;
+    z-index: 1; /* Corrected from -1 to 1 */
+  }
+
+  .SwirlImage img {
+    border: none;
+    display: block;
+    border-radius: 0;
+    width: 60%;
+    height: 60%;
+  }
+
+  .SwirlImage .swirl2 {
+    position: absolute;
+    right: -325px;
+    top: -200px;
+    z-index: 2;
+  }
+
+  .SwirlImage .swirl6 {
+    position: absolute;
+    top: -250px;
+    right: 340px;
+    z-index: 2;
+  }
+
+  .swirl-container{
+    position: relative;
+    display: inline-block;
+    width: 25vw;
+    height: 25vw;
+    margin-top: 40px;
+    z-index: 2; 
+
+  }
+
+  .border_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 3px solid #ad4b6a;
+    z-index: 1;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+  }
+
+  .spark {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      rgba(170, 65, 103, 0.905) 0%,
+      rgba(135, 51, 97, 0.6) 50%,
+      rgba(183, 82, 131, 0.4) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+    transform: rotate(-90deg);
+    animation: rotate var(--spark-duration) linear infinite both;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: 400% 400%;
+  }
+
+  .image-container:hover .spark {
+    opacity: 1;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .contact-container {
+    margin-left: -25px;
+    margin-top: 375px;
+    font-family: 'BarlowSemiCondensed-Bold';
+
+    h3 {
+      font-size: 12px;
+      font-family: 'BarlowSemiCondensed-Light';
+    }
+
+    .flat-button {
+      color: #a9a392;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid #a9a392;
+      animation: fadeIn 1s 1.8s;
+    }
+  }
+}
